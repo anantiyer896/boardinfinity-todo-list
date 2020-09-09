@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
-mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true });
+const debug = require('debug')('todo:app');
+mongoose.connect(process.env.DATABASE_URL || 'mongodb+srv://bmh-user:passw0rd@test-cluster.5bjel.mongodb.net/random-data?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
 
+debug(process.env.DATABASE_URL); 
 const TodoSchema = mongoose.Schema({
   name: {
     type: String,

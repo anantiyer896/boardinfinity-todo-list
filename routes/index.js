@@ -1,5 +1,5 @@
-var express = require('express');
-var debug = require('debug')('todo:app');
+const express = require('express');
+const debug = require('debug')('todo:app');
 const { Todo } = require('../database');
 
 const router = express.Router();
